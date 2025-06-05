@@ -2,13 +2,25 @@ package file.entity;
 
 public class File extends FileSystemEntity{
 
-
-    public File(String tile) {
+    private String fileExtension;
+    public File(String tile,String fileExtension) {
         super(tile);
+        this.fileExtension=fileExtension;
+
+    }
+
+    public String getFileExtension() {
+        return fileExtension;
     }
 
     @Override
     public boolean isFile() {
         return true;
     }
+
+    public String getTitle() {
+        return super.getTitle()+fileExtension;
+    }
+
+
 }

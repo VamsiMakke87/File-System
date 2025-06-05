@@ -9,9 +9,9 @@ public class Main {
         Folder root=new Folder("root");
 
 
-        File file1= new File("File inside root");
-        Folder folder1=new Folder("subfolder inside root");
-        File file2= new File("File inside subfolder");
+        File file1= new File("Text-File-inside-root",".txt");
+        Folder folder1=new Folder("subfolder-inside-root");
+        File file2= new File("PDF-File-inside-subfolder",".pdf");
         root.addChild(file1);
         root.addChild(folder1);
         folder1.addChild(file2);
