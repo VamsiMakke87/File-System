@@ -3,11 +3,11 @@ package file.filter.impl;
 import file.entity.FileSystemEntity;
 import file.filter.Filter;
 
-public class TitleFilter implements Filter {
+public class SearchByFileTitleFilter implements Filter {
 
     private String title;
 
-    public TitleFilter(String title) {
+    public SearchByTitleFilter(String title) {
         this.title = title;
     }
 
