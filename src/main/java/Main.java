@@ -3,6 +3,7 @@ import file.entity.FileSystemEntity;
 import file.entity.Folder;
 import file.filter.Filter;
 import file.filter.impl.AndFilter;
+import file.filter.impl.OrFilter;
 import file.filter.impl.SearchByFileExtensionFilter;
 import file.filter.impl.SearchByTitleFilter;
 
@@ -57,6 +58,12 @@ public class Main {
         dfs(root,andFilter,matchedEntitiesByTitleAndFileExtension);
 
         System.out.println("File entities matched by title '"+title+"' file extension '."+fileExtension+"'" +matchedEntitiesByTitleAndFileExtension);
+
+        Filter orFilter= new OrFilter(titleFilter,fileExtensionFilter);
+        List<FileSystemEntity> matchedEntitiesByTitleOrFileExtension= new ArrayList<>();
+        dfs(root,orFilter,matchedEntitiesByTitleOrFileExtension);
+
+        System.out.println("File entities matched by title '"+title+"' file extension '."+fileExtension+"'" +matchedEntitiesByTitleOrFileExtension);
 
     }
 
