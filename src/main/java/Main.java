@@ -31,8 +31,6 @@ public class Main {
         folder1.addChild(file4);folder1.addChild(file5);
 
 
-        dfs(root);
-
         String title="file";
 
         Filter titleFilter=new SearchByTitleFilter(title);
@@ -83,7 +81,7 @@ public class Main {
 
     }
 
-
+    // exploring all the file and subfolders of root
     private static void dfs(FileSystemEntity root) {
 
         if(root.isFile()){
