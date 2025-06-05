@@ -57,13 +57,13 @@ public class Main {
         List<FileSystemEntity> matchedEntitiesByTitleAndFileExtension= new ArrayList<>();
         dfs(root,andFilter,matchedEntitiesByTitleAndFileExtension);
 
-        System.out.println("File entities matched by title '"+title+"' file extension '."+fileExtension+"'" +matchedEntitiesByTitleAndFileExtension);
+        System.out.println("File entities matched by title '"+title+"' and file extension '."+fileExtension+"'" +matchedEntitiesByTitleAndFileExtension);
 
         Filter orFilter= new OrFilter(titleFilter,fileExtensionFilter);
         List<FileSystemEntity> matchedEntitiesByTitleOrFileExtension= new ArrayList<>();
         dfs(root,orFilter,matchedEntitiesByTitleOrFileExtension);
 
-        System.out.println("File entities matched by title '"+title+"' file extension '."+fileExtension+"'" +matchedEntitiesByTitleOrFileExtension);
+        System.out.println("File entities matched by title '"+title+"' or file extension '."+fileExtension+"'" +matchedEntitiesByTitleOrFileExtension);
 
     }
 
