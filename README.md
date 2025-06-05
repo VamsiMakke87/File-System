@@ -69,10 +69,10 @@ Filter orFilter = new OrFilter(titleFilter, extFilter);
 ## 📂 Sample Output
 
 ```
-File entities matched by title 'file' [file.txt, file.pdf]
-File entities matched by file extension '.pdf' [PDF-File-inside-subfolder.pdf, PDF-File2-inside-subfolder.pdf, file.pdf]
-File entities matched by title 'file' and file extension '.pdf' [file.pdf]
-File entities matched by title 'file' or file extension '.pdf' [PDF-File-inside-subfolder.pdf, PDF-File2-inside-subfolder.pdf, file.txt, file.pdf]
+File entities matched by title 'file'[Text-File-inside-root.txt, PDF-File-inside-subfolder.pdf, PDF-File2-inside-subfolder.pdf, file.txt, file.pdf]
+File entities matched by file extension '.pdf'[PDF-File-inside-subfolder.pdf, PDF-File2-inside-subfolder.pdf, file.pdf]
+File entities matched by title 'file' and file extension '.pdf'[PDF-File-inside-subfolder.pdf, PDF-File2-inside-subfolder.pdf, file.pdf]
+File entities matched by title 'file' or file extension '.pdf'[Text-File-inside-root.txt, PDF-File-inside-subfolder.pdf, PDF-File2-inside-subfolder.pdf, file.txt, file.pdf]
 ```
 
 ---
