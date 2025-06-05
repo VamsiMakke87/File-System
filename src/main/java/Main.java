@@ -2,7 +2,9 @@ import file.entity.File;
 import file.entity.FileSystemEntity;
 import file.entity.Folder;
 import file.filter.Filter;
-import file.filter.impl.TitleFilter;
+import file.filter.impl.AndFilter;
+import file.filter.impl.SearchByFileExtensionFilter;
+import file.filter.impl.SearchByTitleFilter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,23 +17,46 @@ public class Main {
         Folder root=new Folder("root");
 
 
-        File file1= new File("Text-File-inside-root",".txt");
+        File file1= new File("Text-File-inside-root","txt");
         Folder folder1=new Folder("subfolder-inside-root");
-        File file2= new File("PDF-File-inside-subfolder",".pdf");
+        File file2= new File("PDF-File-inside-subfolder","pdf");
+        File file3= new File("PDF-File2-inside-subfolder","pdf");
+        File file4= new File("file","txt");
+        File file5= new File("file","pdf");
         root.addChild(file1);
         root.addChild(folder1);
         folder1.addChild(file2);
+        folder1.addChild(file3);
+        folder1.addChild(file4);folder1.addChild(file5);
+
 
         dfs(root);
 
-        Filter filter=new TitleFilter("f");
+        String title="file";
 
-        List<FileSystemEntity> matchedEntities= new ArrayList<>();
+        Filter titleFilter=new SearchByTitleFilter(title);
 
-        dfs(root,filter,matchedEntities);
+        List<FileSystemEntity> matchedEntitiesByTitle= new ArrayList<>();
 
-        System.out.println(matchedEntities);
+        dfs(root,titleFilter,matchedEntitiesByTitle);
 
+        System.out.println("File entities matched by title '"+title+"'" +matchedEntitiesByTitle);
+
+        String fileExtension="pdf";
+
+        Filter fileExtensionFilter= new SearchByFileExtensionFilter(fileExtension);
+
+        List<FileSystemEntity> matchedEntitiesByFileExtension= new ArrayList<>();
+
+        dfs(root,fileExtensionFilter,matchedEntitiesByFileExtension);
+
+        System.out.println("File entities matched by file extension '."+fileExtension+"'" +matchedEntitiesByFileExtension);
+
+        Filter andFilter= new AndFilter(titleFilter,fileExtensionFilter);
+        List<FileSystemEntity> matchedEntitiesByTitleAndFileExtension= new ArrayList<>();
+        dfs(root,andFilter,matchedEntitiesByTitleAndFileExtension);
+
+        System.out.println("File entities matched by title '"+title+"' file extension '."+fileExtension+"'" +matchedEntitiesByTitleAndFileExtension);
 
     }
 

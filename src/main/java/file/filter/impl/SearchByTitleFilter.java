@@ -3,7 +3,7 @@ package file.filter.impl;
 import file.entity.FileSystemEntity;
 import file.filter.Filter;
 
-public class SearchByFileTitleFilter implements Filter {
+public class SearchByTitleFilter implements Filter {
 
     private String title;
 

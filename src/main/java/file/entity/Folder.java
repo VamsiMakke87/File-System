@@ -25,4 +25,8 @@ public class Folder extends FileSystemEntity {
         return children;
     }
 
+    @Override
+    public String toString() {
+        return super.getTitle();
+    }
 }

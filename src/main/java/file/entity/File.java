@@ -19,8 +19,11 @@ public class File extends FileSystemEntity{
     }
 
     public String getTitleWithExtension() {
-        return super.getTitle()+fileExtension;
+        return super.getTitle()+"."+fileExtension;
     }
 
-
+    @Override
+    public String toString() {
+        return getTitleWithExtension();
+    }
 }
