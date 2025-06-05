@@ -18,7 +18,7 @@ public class File extends FileSystemEntity{
         return true;
     }
 
-    public String getTitle() {
+    public String getTitleWithExtension() {
         return super.getTitle()+fileExtension;
     }
 

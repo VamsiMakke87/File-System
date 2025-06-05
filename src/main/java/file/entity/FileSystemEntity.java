@@ -14,4 +14,10 @@ public abstract class FileSystemEntity {
 
     public abstract boolean isFile();
 
+    @Override
+    public String toString() {
+        return "FileSystemEntity{" +
+                "title='" + title + '\'' +
+                '}';
+    }
 }
