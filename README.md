@@ -84,7 +84,7 @@ src/
 ├── file/
 │   ├── entity/
 │   │   ├── File.java
-│   │   ├── Folder.java (assumed)
+│   │   ├── Folder.java 
 │   │   └── FileSystemEntity.java
 │   └── filter/
 │       ├── Filter.java
